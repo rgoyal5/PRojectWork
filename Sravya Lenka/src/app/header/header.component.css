@@ -1,0 +1,40 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	margin: 0px;
+}
+
+header img{
+	width: 300px;
+	height: 75px;
+}
+
+header{
+	margin: 15px;
+}
+
+header h3{
+	float: right;
+	font-family: 'Roboto', 'sans-serif';
+	color: #34495E;
+	font-size: 24px;
+	margin-right: 60px;
+	margin-top: 30px;
+}
+
+nav{
+	clear: both;
+	margin: 20px 0px 20px 0px;
+	font-size: 18px;
+	text-align: center;
+}
+
+nav a{
+	padding: 10px 40px 10px 40px;
+	text-decoration: none;
+	color: #34495E;
+	font-family: 'Roboto', 'sans-serif';
+}
