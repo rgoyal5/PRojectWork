@@ -1,0 +1,112 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-sm-9 m-auto">
+      <h3 class="mb-5 mt-5">
+
+        
+        Pay Bill
+
+      </h3>
+
+      <form class="form" #f="ngForm" novalidate (ngSubmit)=" save()">
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="width:40px;">
+                  <fa name="tty"></fa>
+              </span>
+            </div>
+            <div class="form-control"><strong>{{pTitle}}</strong></div>
+            
+          </div>
+        </div>
+
+
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="width:40px;">
+                <fa name="user"></fa>
+              </span>
+            </div>
+            <input type="text" class="form-control" id="name" name="name" required minlength="5" maxlength="40" [(ngModel)]="customer.name"
+              #name=ngModel placeholder="Name" />
+          </div>
+          <div class="alert alert-danger" *ngIf="(name.errors && (name.touched || name.darty))">
+            <p *ngIf="(name.errors && (name.touched || name.darty))">Please see that Name
+              <strong>
+                <span *ngIf="name.errors.required">is not left blank</span>
+                <span *ngIf="name.errors.minlength">is atleast 5 chars in length</span>
+              </strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="width:40px;">
+                <fa name="mobile"></fa>
+              </span>
+            </div>
+            <input type="number" class="form-control" id="mbno" name="mbno" required pattern="^[789]\d{9}$" [(ngModel)]="customer.mbno"
+              #mbno=ngModel placeholder="Mobile Number" />
+          </div>
+          <div class="alert alert-danger" *ngIf="mbno.errors && (mbno.touched || mbno.darty)">
+            <p>Please see that Mobile Number
+              <strong>
+                <span *ngIf="mbno.errors.required">is not left blank</span>
+              </strong>
+            </p>
+          </div>
+        </div>
+
+       
+
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="width:40px;">
+                <fa name=""></fa>
+              </span>
+            </div>
+            <input type="text" class="form-control" id="address" name="address" required [(ngModel)]="customer.address" #address=ngModel
+              placeholder="Address" />
+          </div>
+          <div class="alert alert-danger" *ngIf="address.errors && (address.touched || address.darty)">
+            <p>Please see that Address
+              <strong>
+                <span *ngIf="address.errors.required">is not left blank</span>
+              </strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="width:40px;">
+                <fa name="inr"></fa>
+              </span>
+            </div>
+            <input type="number" class="form-control" id="amt" name="amt" [(ngModel)]="customer.mbno"
+              #mbno=ngModel placeholder="Amount" />
+          </div>
+          <div class="alert alert-danger" *ngIf="amt.errors && (amt.touched || amt.darty)">
+            <p>Please see that Amount
+              <strong>
+                <span *ngIf="amt.errors.required">is not left blank</span>
+              </strong>
+            </p>
+          </div>
+        </div>
+
+     
+
+        <div>
+          <button class="btn btn-block btn-primary">Pay</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

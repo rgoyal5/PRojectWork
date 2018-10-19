@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" routerLink="/">
+    <fa name="wifi"></fa>&nbsp;{{title}}
+  </a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/listPlans">
+        <fa name="users"></fa>
+        List Plans</a>
+    </li>
+    <li>
+    <a class="nav-link" routerLink="/pay_and_recharge">
+      <fa name="users"></fa>
+      Pay and Recharge</a>
+  </li>
+  </ul>
+
+  <form class="form-inline">
+      <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="btn-group">
+              <button type="button" title="Product" class="btn btn-primary" 
+              (click)="doChangeField('product',srch)">
+                <fa name="product-hunt"></fa>
+              </button>
+              <button type="button" title="FUP" class="btn btn-primary" 
+              (click)="doChangeField('maxUsage',srch)">
+                <fa name="bar-chart"></fa>
+              </button>
+            
+            
+            </div>
+          </div>
+          <input type="text" name="srchValue" class="form-control" 
+          [(ngModel)]="srchValue"
+          required #srch placeholder="Product" />
+          <div class="input-group-prepend">
+            <button class="btn btn-primary" (click)="doSearch()">
+              <fa name="search"></fa>
+            </button>
+          </div>
+        </div>
+  </form>
+</nav>
+<router-outlet></router-outlet>
